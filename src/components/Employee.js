@@ -44,7 +44,7 @@ useEffect(() => {
         
         });
         //Lanzo una alerta si se a registrado exitosamente 
-        alert("Empleado registrado Exitosamente");
+          alert("Empleado registrado Exitosammente");
           setId("");
           setNombre("");
           setEmail("");
@@ -120,8 +120,9 @@ useEffect(() => {
        <h1>Detalles del Empleado</h1>
        <div class="container mt-4" >
           <form>
+
               <div class="form-group">
-               <input  type="text" class="form-control" id="id" hidden
+               <input type="text" class="form-control" id="id" hidden
                value={id}
                onChange={(event) =>
                 {
@@ -131,7 +132,7 @@ useEffect(() => {
                />
                 
                 <label>Nombre del Empleado</label>
-                <input  type="text" class="form-control" id="nombre"
+                <input type="text" class="form-control" id="nombre"
                 value={nombre}
                 onChange={(event) =>
                   {
@@ -139,9 +140,11 @@ useEffect(() => {
                   }}
                 />
               </div>
+
+
               <div class="form-group">
                 <label>Email</label>
-                <input  type="text" class="form-control" id="email"
+                <input type="text" class="form-control" id="email"
                  value={email}
                   onChange={(event) =>
                     {
@@ -161,9 +164,21 @@ useEffect(() => {
                 />
               </div>
  
+
+              <div class="form-group">
+                <label>Mensaje</label>
+                <input type="text" class="form-control" id="mensaje"
+                  value={mensaje}
+                onChange={(event) =>
+                  {
+                    setMensaje(event.target.value);      
+                  }}
+                />
+              </div>
+
                  <div>
-              <button   class="btn btn-primary mt-4"  onClick={save}>Guardar</button>
-              <button   class="btn btn-warning mt-4"  onClick={update}>Actualizar</button>
+              <button class="btn btn-primary mt-4"  onClick={save}>Guardar</button>
+              <button class="btn btn-warning mt-4"  onClick={update}>Actualizar</button>
               </div>  
             </form>
           </div>
@@ -171,11 +186,11 @@ useEffect(() => {
 <table class="table table-dark" align="center">
   <thead>
     <tr>
-      <th scope="col">Empleado Id</th>
-      <th scope="col">Empleado Nombre</th>
-      <th scope="col">Empleado Email</th>
-      <th scope="col">Empleado Telefono</th>
-      <th scope="col">Empleado Mensaje</th>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Mensaje</th>
 
       <th scope="col">Opciones</th>
     </tr>
