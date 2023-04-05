@@ -1,0 +1,22 @@
+.Card{
+    border: 1px solid salmon;
+    display: block;
+    height: 340px;
+    padding: 10px;
+    width: 150px;
+  }
+  
+  .Card--header{
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .Card--body{
+    font-size: 18px;
+    color: black;
+  }
+  
+  .Card--footer{
+    color: gray;
+    text-align: center;
+  }

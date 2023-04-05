@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.right{
+  width: 60%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +39,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ---------------------Acordeon-------------- */
+
+
+.wrapper{
+  display: flex;
+  height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.accordion{
+  width: 500px;
+}
+
+.item{
+  background-color: aliceblue;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+
+}
+
+.title{
+  color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content{
+  color: blue;
 }
