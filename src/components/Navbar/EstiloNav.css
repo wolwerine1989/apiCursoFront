@@ -2,9 +2,20 @@
 
 
 .navbar{
-    background-color: aqua;
+    background-color: #353576;
 }
 
-#subtitulo{
-    color:brown;
+.subtitulo{
+    color:royalblue;
   }
+
+#computadora{
+    padding:'30px'; 
+    width: '100%';
+    height: 'auto';
+    align-items: flex-end;
+}
+
+#alinear{
+    padding-top: 50px;
+}

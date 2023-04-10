@@ -1,3 +1,7 @@
+.contenedor{
+  background-color: #2868A8;
+}
+
 .Card{
     border: 1px solid salmon;
     display: block;
@@ -19,4 +23,9 @@
   .Card--footer{
     color: gray;
     text-align: center;
+  }
+
+  #separar{
+    padding: 10px;
+
   }

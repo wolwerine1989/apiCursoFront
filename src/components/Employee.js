@@ -5,6 +5,9 @@
 import axios from 'axios';
 import { useEffect, useState } from "react";
 
+//------------Libreria--------------------
+import { Element } from 'react-scroll';
+
 function Employee() {
   //Asigno los campos de la base de datos con const
   const [id, setId] = useState('');
@@ -13,6 +16,7 @@ function Employee() {
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [employees, setUsers] = useState([]);
+  const [emailError, setEmailError] = useState(null);
 
   useEffect(() => {
     (async () => await Load())();
@@ -24,6 +28,8 @@ function Employee() {
     setUsers(result.data);
     console.log(result.data);
   }
+
+
 
   //Creo el evento guardar y mando una url para que se guarde
   async function save(event) {
@@ -104,20 +110,37 @@ function Employee() {
       alert("Fallo la Actualizacion de datos");
     }
   }
+//-------------------------Validar inputs-----------
+
+const handleSubmit = (event) => {
+
+  const validateEmail = () => {
+    if (!/^\S+@\S+$/.test(email)) {
+      setEmailError("Por favor ingrese un correo electrónico válido");
+      return false;
+    } 
+  };
+
+
+
+}
+
+//------------------------Fin de validacion-------------
+
 
   return (
-
-    <div>
-      <h1>Detalles del Usuario</h1>
+    <Element name="test5" className="element">
+    <div className="contenedor">
+      <h2>Detalles del Usuario</h2>
       <div class="container mt-4" >
      
      
-      <div class="spinner-border text-secondary" role="status">
+      {/* <div class="spinner-border text-secondary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div>
+</div> */}
 
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div class="form-group">
             <input type="text" class="form-control" id="id" hidden
               value={id}
@@ -128,10 +151,14 @@ function Employee() {
             />
 
             <label>Nombre del Usuario</label>
-            <input type="text" class="form-control" id="nombre" placeholder="nombre del usuario"
+            <input type="text" class="form-control"
+             id="nombre" autoComplete='off' 
+             placeholder="nombre del usuario" 
+              required
               value={nombre}
               onChange={(event) => {
                 setNombre(event.target.value);
+                
               }}
             />
           </div>
@@ -139,17 +166,23 @@ function Employee() {
 
           <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control" id="email" placeholder='email del usuario'
+            <input type="text" class="form-control" 
+            id="email" autoComplete='off' 
+            placeholder='email del usuario'
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
+                handleSubmit(event);
               }}
             />
+                  {emailError && <span>{emailError}</span>}
           </div>
 
           <div class="form-group">
             <label>Telefono</label>
-            <input type="text" class="form-control" id="telefono" placeholder='telefono del usuario'
+            <input type="text" class="form-control"
+             id="telefono" autoComplete='off'
+              placeholder='telefono del usuario'
               value={telefono}
               onChange={(event) => {
                 setTelefono(event.target.value);
@@ -160,7 +193,9 @@ function Employee() {
 
           <div class="form-group">
             <label>Mensaje</label>
-            <input type="text" class="form-control" id="mensaje" placeholder='ingresa un mensaje'
+            <input type="text" class="form-control"
+             id="mensaje" autoComplete='off' 
+             placeholder='ingresa un mensaje'
               value={mensaje}
               onChange={(event) => {
                 setMensaje(event.target.value);
@@ -175,7 +210,7 @@ function Employee() {
         </form>
       </div>
 
-      <table class="table table-dark" align="center">
+      <table id="separar" class="table table-dark" align="center">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -206,6 +241,7 @@ function Employee() {
         })}
       </table>
     </div>
+    </Element>
   );
 }
 export default Employee;

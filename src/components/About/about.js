@@ -1,6 +1,17 @@
+import { Element } from "react-scroll";
+
+
+
 function About() {
     return(
-        <h2 className="acercaDe">About</h2>
+        <Element name="test3" className="element">
+        <div className="container">
+            <div class="sobrenosotros">
+                <h2 className="acercaDe">Sobre Nosotros</h2>
+                <p>Somos una Empresa dedicada a la importacion de computadoras</p>
+            </div>
+        </div>
+        </Element>
     )
 };
 

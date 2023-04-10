@@ -4,41 +4,44 @@ import axios from 'axios';
 //import './App.css';
 
 //Libreria Toastify
-import { Bounce, toast } from 'react-toastify';
+import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Element } from 'react-scroll';
 
-
-//For API Requests
-
+class EnviarEmail extends React.Component
+{
   //send email button click function
-  function EnviarEmail(){
-  try{
-    const response =  axios.get('http://127.0.0.1:8000/api/send/email/');
-    console.log(response.data);
-  }catch(error){
-    if (error.response) {
-        console.error(`fallo ${error.response.status}`)
-    }else{
-      console.log('se a completado tu solicitud')
-      //Success Message in Sweetalert modal
-      Bounce({
-        title: ['message'],
-        text: "Thanks",
-        type: 'success'
-    })
-  }}
-  
-  
-
+  sendmail(){
+    axios.get('http://127.0.0.1:8000/api/send/email/',
     
+    alert("se a enviado tu correo")
+    ).then(res=>
+    {
+      console.log(res.data['message']);
+      //Success Message in Sweetalert modal
+      // alert({
+      //   title:  res.data['message'],
+      //   text: "Thanks",
+      //   type: 'success',
+        
+      // });
+    
+    }
+    );
+  }
+  
+  
+  render(Message)
+  {
     return (
-      <div>
-       <h1>hola</h1>
-         <button onClick={e => {this.sendemail()}}>Click Me!! To Send Mail</button>
+      <Element name='test6' className='element'>
+      <div style={{padding:25}}>
+      <center> <h1>Email</h1></center>
+      <center> <button class="btn btn-primary mt-4" onClick={e => {this.sendmail()}}>Enviar Mail</button></center>
         </div>
-)
-    };
+        </Element>
+) } }
  export default EnviarEmail;
 
 
