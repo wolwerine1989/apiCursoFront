@@ -4,7 +4,6 @@ import axios from 'axios';
 //import './App.css';
 
 //Libreria Toastify
-import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Element } from 'react-scroll';
@@ -19,14 +18,6 @@ class EnviarEmail extends React.Component
     ).then(res=>
     {
       console.log(res.data['message']);
-      //Success Message in Sweetalert modal
-      // alert({
-      //   title:  res.data['message'],
-      //   text: "Thanks",
-      //   type: 'success',
-        
-      // });
-    
     }
     );
   }
@@ -44,19 +35,3 @@ class EnviarEmail extends React.Component
 ) } }
  export default EnviarEmail;
 
-
-
-
-//  import { confirm } from 'react-toastify';
-
-// const handleDelete = () => {
-//   confirm({
-//     message: '¿Estás seguro que deseas eliminar este elemento?',
-//     onOk: () => {
-//       // Código para eliminar el elemento
-//     },
-//     onCancel: () => {
-//       // Código para cancelar la acción
-//     }
-//   });
-// };
