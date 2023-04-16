@@ -5,7 +5,6 @@ function Footer() {
     return(
         <Element name="test4" className="element">
 
-        <div>
             <i class="fas fa-copyright fa-xs fa-fw "></i>
                 <div className="contactor">
                     <div class="container">
@@ -16,7 +15,6 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
         </Element>
     )
 };

@@ -16,20 +16,23 @@ import EnviarEmail from "./mail/EnviarEmail";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-
+import "./App.css";
 //-----------------------------------Libreria react-toastify--------------
 import 'react-toastify/dist/ReactToastify.css';
 
 
 //---------------------------------Routing------------------
-//import { BrowserRouter as Router } from 'react-router-dom';
+
+
+//----------------------------Carrusel-----------------------------
+import { SimpleSlider } from "./components/Products/Carrusel/Carousel";
 
 
 function App() {
 
 
   return (
-    <div className="App">
+    <div className="containerPrincipal">
 
                 <Navbar/>
                 
@@ -39,7 +42,7 @@ function App() {
 
                 <Employee/>
 
-               {/* <SplideSlider images={images}/>  */}
+                <SimpleSlider/>
 
                 <About/>
 

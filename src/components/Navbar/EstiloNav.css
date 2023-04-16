@@ -1,21 +1,22 @@
 
 
 
-.navbar{
-    background-color: #353576;
+.navbarMain{
+    background-image: url('../../../public/segundaImagen.jpg');  
+    height:500px;
+    width: 250vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5px;
 }
 
 .subtitulo{
-    color:royalblue;
+    /* color:royalblue; */
   }
 
-#computadora{
-    padding:'30px'; 
-    width: '100%';
-    height: 'auto';
-    align-items: flex-end;
-}
 
-#alinear{
-    padding-top: 50px;
-}
+
+
+
+

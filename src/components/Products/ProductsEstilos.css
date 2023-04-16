@@ -4,13 +4,14 @@
 /* --------------------Acordeon--------------------- */
 
 .wrapper{
-    display: flexbox;
-    height: 75vh;
-    width: 100vh;
+    background-image: url('../../../public/cpu.jpg'); 
+    display:grid;
+    height: 80vh;
+    width: 150vh;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
-    padding-left: 100px;
+    padding-top: 200px;
+    padding-left: 1000px;
 }
 
 .accordion{

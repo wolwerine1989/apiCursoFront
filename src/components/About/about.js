@@ -8,7 +8,7 @@ function About() {
         <div className="container">
             <div class="sobrenosotros">
                 <h2 className="acercaDe">Sobre Nosotros</h2>
-                <p>Somos una Empresa dedicada a la importacion de computadoras</p>
+                <p>Somos una Empresa dedicada a la exportacion de computadoras</p>
             </div>
         </div>
         </Element>

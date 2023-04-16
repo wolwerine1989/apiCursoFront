@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Element } from "react-scroll";
+import Slider from 'react-slick';
+
+
+
+
 
 //import '../App.css';
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 //import '/ProductsEstilos'
 import  "./ProductsEstilos.css";
-import "./Mycard.css";
-import Mycard from "./Mycard.js";
 
 function Products() {
 
@@ -21,22 +24,28 @@ function Products() {
         setSelected(i)
     }
 
-    let box = document.querySelector('.product-container');
 
-    const btnpressprev = () => {
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft - width;
-        console.log(width)
-    }
-
-    const btnpressnext = () => {
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft + width;
-        console.log(width)
-    }
 //--------------------Fin del Acordeon--------------
 
+
+
+//-------------------Inicio Carrusel--------------
+
+   
+
+      
+        
+    
+
+
+
+
+
+
+//----------------Fin Carrusel---------------------
+
     return (
+        <div>
         <div className="total">
         <div className="wrapper">
             <div className="accordion">
@@ -55,60 +64,36 @@ function Products() {
                         <div className={
                             selected === i ? 'content show' : 'content'}>{item.answer}
                         </div>
-                        
+
                     </div>
                 ))}
             </div>
         </div>
 
-        <Element name="test2" className="element">
 
-        <div className="product-carousel">
-            <button className="pre-btn" onClick={btnpressprev}><p>&lt;</p></button>
-            <button className="next-btn" onClick={btnpressnext}><p>&gt;</p></button>
+   </div>
 
-
-            <div className="product-container">
-                <Mycard cardno='1' src='https://www.google.com/url?sa=i&url=https%3A%2F%2F442.perfil.com%2Fnoticias%2Fesports%2Fque-es-dota-2-el-deporte-electronico-que-reparte-millones-de-dolares-en-sus-torneos-peek.phtml&psig=AOvVaw15K71Q7asBzjJ61CQ_WPxA&ust=1681172165287000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIir6b-Env4CFQAAAAAdAAAAABAE' />
-                <Mycard cardno='2' />
-                <Mycard cardno='3' />
-                <Mycard cardno='4' />
-                <Mycard cardno='5' />
-                <Mycard cardno='6' />
-                <Mycard cardno='7' />
-                <Mycard cardno='8' />
-                <Mycard cardno='9' />
-                <Mycard cardno='10' />
-                <Mycard cardno='11' />
-                <Mycard cardno='12' />
-                <Mycard cardno='13' />
-            </div>
-            
-        </div>
-        </Element>
-
-        </div>
-    )
+    </div>
+)
     
-
+                        
 };
 
 //-----------------------Array para el Acordeon-------------
 const data = [
     {
-        question:'Question 1',
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industr Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,             when an unknown printer took a galley of type and scrambled it to make a type specimen typesetting, remaining essentially unchanged. It was popularised in the 1960s with",
+        question:'Cpu',
+        answer: "Computadora de escritorio empresarial DELL Optiplex 7010 (Intel Quad Core i5-3470 a 3,2 GHz, 16 GB de RAM, 2 TB de disco duro, USB 3.0, DVDRW, Windows 10 Professional (renovado",
     },
     {
-        question:'Question 2',
-        answer: "Lorem Ipsum 2 is simply dummy text of the printing and typesetting industr Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,             when an unknown printer took a galley of type and scrambled it to make a type specimen typesetting, remaining essentially unchanged. It was popularised in the 1960s with",
+        question:'Mouse',
+        answer: "Logitech B100 Corded Mouse — Ratón USB con cable para ordenadores y portátiles, para uso con la mano derecha o izquierda, negro",
     },
     {
-        question:'Question 3',
-        answer: "Lorem Ipsum 3 is simply dummy text of the printing and typesetting industr Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,             when an unknown printer took a galley of type and scrambled it to make a type specimen typesetting, remaining essentially unchanged. It was popularised in the 1960s with",
+        question:'Monitor',
+        answer: "Monitor Gamer Asus Tuf Gaming Vg27wq Curvo 27 Wqhd 165hz 1ms",
     }
 ]
-
 
 
 export default Products

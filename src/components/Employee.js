@@ -1,9 +1,11 @@
 
 
 
-
 import axios from 'axios';
 import { useEffect, useState } from "react";
+
+
+import "./Employees.module.css";
 
 //------------Libreria--------------------
 import { Element } from 'react-scroll';
@@ -132,7 +134,7 @@ const handleSubmit = (event) => {
     <Element name="test5" className="element">
     <div className="contenedor">
       <h2>Detalles del Usuario</h2>
-      <div class="container mt-4" >
+      <div class="container mt-8">
      
      
       {/* <div class="spinner-border text-secondary" role="status">
@@ -210,7 +212,7 @@ const handleSubmit = (event) => {
         </form>
       </div>
 
-      <table id="separar" class="table table-dark" align="center">
+      {/* <table id="separar" class="table table-dark" align="center">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -239,7 +241,7 @@ const handleSubmit = (event) => {
             </tbody>
           );
         })}
-      </table>
+      </table> */}
     </div>
     </Element>
   );

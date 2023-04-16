@@ -1,8 +1,7 @@
-.contenedor{
-  background-color: #2868A8;
-}
+
 
 .Card{
+  background-image: url('../../public/cpu.jpg');
     border: 1px solid salmon;
     display: block;
     height: 340px;
