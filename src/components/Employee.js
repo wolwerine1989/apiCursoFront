@@ -2,7 +2,7 @@
 
 
 import axios from 'axios';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 import "./Employees.module.css";
@@ -17,19 +17,6 @@ function Employee() {
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const [employees, setUsers] = useState([]);
-  const [emailError, setEmailError] = useState(null);
-
-  useEffect(() => {
-    (async () => await Load())();
-  }, []);
-
-  async function Load() {
-    const result = await axios.get(
-      "http://127.0.0.1:8000/api/employees");
-    setUsers(result.data);
-    console.log(result.data);
-  }
 
 
 
@@ -54,78 +41,14 @@ function Employee() {
       setEmail("");
       setTelefono("");
       setMensaje("");
-      Load();
+      //Load();
 
     }
     catch (err) {
       alert("Ha fallado el registro del usuario");
     }
   }
-
-  //Preparo los datos en una funcion asincrona 
-  async function editEmployee(employees) {
-    //Asigno los campos de la bd para modificarlos
-    setNombre(employees.nombre);
-    setEmail(employees.email);
-    setTelefono(employees.telefono);
-    setMensaje(employees.mensaje);
-    setId(employees.id);
-
-  }
-
-
-  //Creo la funcion asicrona DeleteEmployee que va borrar los campos de la base de datos
-  async function DeleteEmployee(id) {
-    //Asigno la url y la llave primaria
-    await axios.delete("http://127.0.0.1:8000/api/delete/" + id);
-    alert("El Usuario se a borrado exitosamente");
-    Load();
-
-  }
-
-
-  ////Creo la funcion asincrona update
-  async function update(event) {
-    event.preventDefault();
-
-    try {
-      //creo la url con la clave primaria, mediante el id actualizara los campos
-      await axios.put("http://127.0.0.1:8000/api/update/" + employees.find(u => u.id === id).id || id,
-        {
-          id: id,
-          nombre: nombre,
-          email: email,
-          telefono: telefono,
-          mensaje: mensaje
-
-        });
-      alert("Registro Actualizado");
-      setId("");
-      setNombre("");
-      setEmail("");
-      setTelefono("");
-      setMensaje("");
-      Load();
-
-    }
-    catch (err) {
-      alert("Fallo la Actualizacion de datos");
-    }
-  }
 //-------------------------Validar inputs-----------
-
-const handleSubmit = (event) => {
-
-  const validateEmail = () => {
-    if (!/^\S+@\S+$/.test(email)) {
-      setEmailError("Por favor ingrese un correo electrónico válido");
-      return false;
-    } 
-  };
-
-
-
-}
 
 //------------------------Fin de validacion-------------
 
@@ -135,14 +58,10 @@ const handleSubmit = (event) => {
     <div className="contenedor">
       <h2>Detalles del Usuario</h2>
       <div class="container mt-8">
-     
-     
-      {/* <div class="spinner-border text-secondary" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div> */}
+    
 
 
-        <form onSubmit={handleSubmit}>
+        <form>
           <div class="form-group">
             <input type="text" class="form-control" id="id" hidden
               value={id}
@@ -174,10 +93,8 @@ const handleSubmit = (event) => {
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
-                handleSubmit(event);
               }}
             />
-                  {emailError && <span>{emailError}</span>}
           </div>
 
           <div class="form-group">
@@ -207,7 +124,6 @@ const handleSubmit = (event) => {
 
           <div>
             <button class="btn btn-primary mt-4" onClick={save}>Guardar</button>
-            <button class="btn btn-warning mt-4" onClick={update}>Actualizar</button>
           </div>
         </form>
       </div>

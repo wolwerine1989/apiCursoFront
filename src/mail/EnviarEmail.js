@@ -6,7 +6,6 @@ import axios from 'axios';
 //Libreria Toastify
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Element } from 'react-scroll';
 
 class EnviarEmail extends React.Component
 {
@@ -26,12 +25,7 @@ class EnviarEmail extends React.Component
   render(Message)
   {
     return (
-      // <Element name='test6' className='element'>
-      // <div style={{padding:25}}>
-      // <center> <h1>Email</h1></center>
-      // <center> <button class="btn btn-primary mt-4" onClick={e => {this.sendmail()}}>Enviar Mail</button></center>
-      //   </div>
-      //   </Element>
+
       null
 ) } }
  export default EnviarEmail;

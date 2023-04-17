@@ -1,15 +1,4 @@
 import { useState } from "react";
-import { Element } from "react-scroll";
-import Slider from 'react-slick';
-
-
-
-
-
-//import '../App.css';
-//import "bootstrap/dist/css/bootstrap.min.css";
-
-//import '/ProductsEstilos'
 import  "./ProductsEstilos.css";
 
 function Products() {
